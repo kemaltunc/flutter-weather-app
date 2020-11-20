@@ -1,8 +1,6 @@
 import 'package:flutter_weatherapp/app/data/source/remote/model/response/main_forecast.dart';
 import 'package:flutter_weatherapp/app/domain/usecase/weather_usecase.dart';
-import 'package:flutter_weatherapp/app/presentation/components/loading.dart';
 import 'package:flutter_weatherapp/core/base/base_controller.dart';
-import 'package:flutter_weatherapp/core/base/screen_state.dart';
 import 'package:flutter_weatherapp/core/os/permission_manager.dart';
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
@@ -17,8 +15,8 @@ class HomeController extends BaseController {
 
   MainForecast forecast;
 
-  var test1 = "".obs;
-  var test2 = "".obs;
+  var test1 = "test1".obs;
+  var test2 = "test2".obs;
 
   @override
   void onInit() async {
