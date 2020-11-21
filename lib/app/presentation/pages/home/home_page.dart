@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_weatherapp/app/presentation/components/weather_cart.dart';
 import 'package:flutter_weatherapp/core/components/base_view.dart';
 import 'package:flutter_weatherapp/app/presentation/pages/home/home_controller.dart';
-import 'package:flutter_weatherapp/core/components/horizantal_space.dart';
-import 'package:flutter_weatherapp/core/components/vertical_space.dart';
-import 'package:get/get.dart';
+import 'package:flutter_weatherapp/core/util/import_helper.dart';
+
 
 class HomePage extends BaseView<HomeController> {
   @override
@@ -17,7 +16,7 @@ class HomePage extends BaseView<HomeController> {
           padding: EdgeInsets.only(left: 16, right: 16),
           child: Column(
             children: [
-              VerticalSpace(Get.statusBarHeight),
+              VerticalSpace(8.heightPx()),
               Row(
                 children: [
                   Icon(Icons.location_city),

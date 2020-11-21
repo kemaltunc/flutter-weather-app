@@ -1,6 +1,5 @@
 import 'package:flutter_weatherapp/app/data/source/remote/base/http_response.dart';
 import 'package:flutter_weatherapp/core/base/screen_state.dart';
-import 'package:flutter_weatherapp/core/base/state_class.dart';
 import 'package:get/state_manager.dart';
 import 'package:get/get.dart';
 

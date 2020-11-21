@@ -3,8 +3,9 @@ import 'package:flutter_weatherapp/core/base/base_controller.dart';
 import 'package:flutter_weatherapp/core/base/screen_state.dart';
 import 'package:get/get.dart';
 
+
 abstract class BaseView<T extends BaseController> extends GetView<T> {
-  
+
   final backroundColor;
   BaseView({this.backroundColor = Colors.white});
 
@@ -49,3 +50,4 @@ abstract class BaseView<T extends BaseController> extends GetView<T> {
     }
   }
 }
+
