@@ -1,1 +1,1 @@
-enum ScreenState { LOADING, SUCCESS, ERROR }
+enum ScreenState { LOADING, SUCCESS, EMPTY, ERROR }

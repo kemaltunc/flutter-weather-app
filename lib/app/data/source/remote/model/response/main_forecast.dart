@@ -163,7 +163,7 @@ class Condition {
 
   factory Condition.fromJson(Map<String, dynamic> json) => Condition(
         text: textValues.map[json["text"]],
-        icon: json["icon"],
+        icon: json["icon"].toString(),
         code: json["code"],
       );
 

@@ -4,7 +4,6 @@ import 'package:flutter_weatherapp/core/base/base_controller.dart';
 import 'package:flutter_weatherapp/core/os/permission_manager.dart';
 import 'package:get/get.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:flutter_weatherapp/app/data/source/remote/base/http_response.dart';
 
 class HomeController extends BaseController {
   final WeatherUseCase useCase;
@@ -13,10 +12,9 @@ class HomeController extends BaseController {
 
   PermissionManager permissionManager = Get.find();
 
-  MainForecast forecast;
+  Rx<MainForecast> forecast = Rx<MainForecast>();
 
-  var test1 = "test1".obs;
-  var test2 = "test2".obs;
+
 
   @override
   void onInit() async {
@@ -41,12 +39,15 @@ class HomeController extends BaseController {
 
   Future<void> _getWeather() async {
     var query = await combineLatLong();
-    var result = await useCase.getWeather(query);
 
-    if (result.isSuccess()) {
-      forecast = result.data;
+    useCase.getWeather(query).execute((loading) {}, (data) {
+      forecast.value = data;
       setSuccess();
-    }
+    }, (empty) {
+      setEmpty("Sonuç bulunamadı");
+    }, (_code, _errorMessage) {
+      setError(_errorMessage);
+    });
   }
 
   Future<String> combineLatLong() async {
